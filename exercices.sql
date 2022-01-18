@@ -173,14 +173,20 @@ ORDER BY date_embauche ASC
 LIMIT 1;
 
  -- Reponse 20
-SELECT nom, prenom, salaire, (salaire + 100) AS 'Augmentation'
+UPDATE employes SET salaire = (salaire + 100);
+ -- Vérification
+SELECT nom, prenom, salaire
 FROM employes;
 
  -- Reponse 21
-DELETE WHERE service = 'secretariat';
+DELETE FROM employes WHERE service = 'secretariat';
  -- Vérification
 SELECT *
 FROM employes
 WHERE service = 'secretariat';
+
+ --
+ -- NETTOYAGE
+ --
 
 DROP DATABASE entreprise_exo;
