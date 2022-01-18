@@ -158,7 +158,7 @@ LIMIT 1;
 
  -- Reponse 18
 SELECT
-    prenom AS 'Premier informaticien recrute'
+    prenom AS 'Comptable mieux paye'
 FROM employes
 WHERE service = 'comptabilite'
 ORDER BY salaire DESC
