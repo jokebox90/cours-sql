@@ -76,11 +76,10 @@ WHERE id_livre IN (
 
 SELECT titre
 FROM livre
-WHERE id_livre IN (
+WHERE id_livre NOT IN (
     SELECT id_livre
     FROM emprunt
-    WHERE id_abonne
-    NOT IN (
+    WHERE id_abonne IN (
         SELECT
             id_abonne
         FROM abonne
@@ -96,7 +95,7 @@ WHERE id_livre IN (
     SELECT id_livre
     FROM emprunt
     WHERE date_rendu IS NULL
-    AND id_abonne NOT IN (
+    AND id_abonne IN (
         SELECT
             id_abonne
         FROM abonne
@@ -105,4 +104,3 @@ WHERE id_livre IN (
 );
 
 -- DEFI : (difficile) Qui a emprunté le plus de livre à la bibliotheque ?
-
